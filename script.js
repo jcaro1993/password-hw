@@ -1,25 +1,22 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
-
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowerCase = "abcdefghijklmnopqrstuvwxyz";
 var specialChar = "!@#$%^&*()_-+={}[];:'`~<,>.?/|";
 var num = "0123456789";
-
-var result = []
 upperCase = upperCase.split("")
 lowerCase = lowerCase.split("")
 specialChar = specialChar.split("")
 num = num.split("")
-
+    // greeting the user
 alert("Welcome! Please click 'Generate password' to start!");
 
+//making a function to randomly get a password
 function generatePassword() {
-
+    var result = []
     var pwlength = prompt("How long do you want your password to be");
     var newPass = ""
-    var letterChoice = confirm("do you want ypur password to have letters?")
+    var letterChoice = confirm("do you want your password to have letters?")
     var numChoice = confirm("do you want your password to have numbers?")
     var symbolChoice = confirm("do you want your password to have special letters")
     if (pwlength < 8 && pwlength > 128) {
@@ -50,6 +47,7 @@ function generatePassword() {
             newPass += result[Math.floor(Math.random() * result.length)]
         }
     }
+    console.log(result)
     return newPass
 }
 
